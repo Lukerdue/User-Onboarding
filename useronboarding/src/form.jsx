@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 
 function Form (props){
 
@@ -15,7 +14,7 @@ return(
         <input
         type="password"
         name="password"
-        value={props.value.password}
+        value={props.values.password}
         onChange={props.changeHandler}
         placeholder="Password"
         /><br/>
@@ -26,11 +25,14 @@ return(
         onChage={props.changeHandler}
         placeholder="example@sample.com"
         /><br/>
+        <label>
         <input
         type="checkbox"
         name="eula"
-        /><br/><br/>
-        <button onClick={proips.submit}>Submit!</button>
+        checked={props.values.eula}
+        onChange={props.changeHandler}
+        />User Agreement</label><br/><br/>
+        <button onClick={props.submit}>Submit!</button>
     </form>
 )
 
