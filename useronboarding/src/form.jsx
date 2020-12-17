@@ -3,6 +3,13 @@ import React from 'react'
 function Form (props){
 
 return(
+    <div>
+        <div className="errors">
+            <p>{props.errors.name}</p>
+            <p>{props.errors.password}</p>
+            <p>{props.errors.email}</p>
+            <p>{props.errors.eula}</p>
+        </div>
     <form>
         <input
         type="text"
@@ -22,18 +29,19 @@ return(
         type="text"
         name="email"
         value={props.values.email}
-        onChage={props.changeHandler}
+        onChange={props.changeHandler}
         placeholder="example@sample.com"
         /><br/>
         <label>
         <input
         type="checkbox"
         name="eula"
-        checked={props.values.eula}
+        value={props.values.eula}
         onChange={props.changeHandler}
         />User Agreement</label><br/><br/>
-        <button onClick={props.submit}>Submit!</button>
+        <button disabled={props.disabled} onClick={props.submit}>Submit!</button>
     </form>
+    </div>
 )
 
 }
